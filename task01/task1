@@ -1,0 +1,103 @@
+
+const int ledPin1 = 11;
+const int ledPin2 = 10;
+const int ledPin3 = 6;
+const int ledPin4 = 9;
+const int ledPin5 = 3;
+const int ledPin6 = 5;
+
+
+int ledState = LOW; 
+int ledStatePrevious = ledState;
+
+unsigned long previousMillis1 = 0;
+unsigned long previousMillis2 = 0;
+unsigned long previousMillis3 = 0;
+unsigned long previousMillis4 = 0;
+unsigned long previousMillis5 = 0;  
+unsigned long previousMillis6 = 0; 
+
+const long interval1 = 7000; 
+const long interval2 = 10000; 
+const long interval3 = 4000;
+const long interval4 = 50000;
+const long interval5 = 20000;
+const long interval6 = 300000;
+      
+void setup() {
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(ledPin3, OUTPUT);
+  pinMode(ledPin4, OUTPUT);
+  pinMode(ledPin5, OUTPUT);
+  pinMode(ledPin6, OUTPUT);
+}
+
+void loop() {
+  unsigned long currentMillis = micros();
+   if (currentMillis - previousMillis1 >= interval1) {
+    previousMillis1 = currentMillis;
+    if (ledState == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+    digitalWrite(ledPin1, ledStatePrevious);
+    ledStatePrevious = ledState;
+   }
+   
+       if (currentMillis - previousMillis2 >= interval2) {
+    previousMillis2 = currentMillis;
+    if (ledStatePrevious == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+    ledStatePrevious = ledState;
+    digitalWrite(ledPin2, ledState);
+       }
+      
+       if (currentMillis - previousMillis3 >= interval3) {
+    previousMillis3 = currentMillis;
+    if (ledStatePrevious == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+    ledStatePrevious = ledState;
+    digitalWrite(ledPin3, ledStatePrevious);
+       }
+       
+       if (currentMillis - previousMillis4 >= interval4) {
+    previousMillis4 = currentMillis;
+   if (ledStatePrevious == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+    ledStatePrevious = ledState;
+    digitalWrite(ledPin4, ledStatePrevious);
+       }
+   
+       if (currentMillis - previousMillis5 >= interval5) {
+    previousMillis5 = currentMillis;
+    if (ledStatePrevious == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+    ledStatePrevious = ledState;
+    digitalWrite(ledPin5, ledStatePrevious);
+       }
+       
+         if (currentMillis - previousMillis6 >= interval6) {
+    previousMillis6 = currentMillis;
+    if (ledStatePrevious == LOW) {
+      ledState = HIGH;
+    } else {
+      ledState = LOW;
+    }
+    ledStatePrevious = ledState;
+    digitalWrite(ledPin6, ledStatePrevious);
+       }
+}

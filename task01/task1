@@ -1,14 +1,26 @@
 
+
 const int ledPin1 = 11;
 const int ledPin2 = 10;
-const int ledPin3 = 6;
-const int ledPin4 = 9;
+const int ledPin3 = 9;
+const int ledPin4 = 6;
 const int ledPin5 = 3;
 const int ledPin6 = 5;
 
 
-int ledState = LOW; 
-int ledStatePrevious = ledState;
+int ledState1 = LOW; 
+int ledState2 = LOW; 
+int ledState3 = LOW; 
+int ledState4 = LOW; 
+int ledState5 = LOW; 
+int ledState6 = LOW; 
+
+int ledStatePrevious1 = ledState1;
+int ledStatePrevious2 = ledState2;
+int ledStatePrevious3 = ledState3;
+int ledStatePrevious4 = ledState4;
+int ledStatePrevious5 = ledState5;
+int ledStatePrevious6 = ledState6;
 
 unsigned long previousMillis1 = 0;
 unsigned long previousMillis2 = 0;
@@ -17,9 +29,9 @@ unsigned long previousMillis4 = 0;
 unsigned long previousMillis5 = 0;  
 unsigned long previousMillis6 = 0; 
 
-const long interval1 = 7000; 
-const long interval2 = 10000; 
-const long interval3 = 4000;
+const long interval1 = 500000; 
+const long interval2 = 13000; 
+const long interval3 = 18000;
 const long interval4 = 50000;
 const long interval5 = 20000;
 const long interval6 = 300000;
@@ -37,26 +49,27 @@ void loop() {
   unsigned long currentMillis = micros();
    if (currentMillis - previousMillis1 >= interval1) {
     previousMillis1 = currentMillis;
-    if (ledState == LOW) {
-      ledState = HIGH;
+    if (ledState1 == LOW) {
+      ledState1 = HIGH;
     } else {
-      ledState = LOW;
+      ledState1 = LOW;
     }
-    digitalWrite(ledPin1, ledStatePrevious);
-    ledStatePrevious = ledState;
+    ledStatePrevious1 = ledState1;
+    digitalWrite(ledPin1, ledState1);
+    
    }
-   
-       if (currentMillis - previousMillis2 >= interval2) {
+  
+      if (currentMillis - previousMillis2 >= interval2) {
     previousMillis2 = currentMillis;
-    if (ledStatePrevious == LOW) {
-      ledState = HIGH;
+    if (ledState2 == LOW) {
+      ledState2 = HIGH;
     } else {
-      ledState = LOW;
+      ledState2 = LOW;
     }
-    ledStatePrevious = ledState;
-    digitalWrite(ledPin2, ledState);
+    ledStatePrevious1 = ledState1;
+    digitalWrite(ledPin2, ledState2);
        }
-      
+       /* 
        if (currentMillis - previousMillis3 >= interval3) {
     previousMillis3 = currentMillis;
     if (ledStatePrevious == LOW) {
@@ -99,5 +112,5 @@ void loop() {
     }
     ledStatePrevious = ledState;
     digitalWrite(ledPin6, ledStatePrevious);
-       }
+       }*/
 }
